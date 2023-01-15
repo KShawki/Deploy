@@ -1,3 +1,12 @@
+# CHECKLIST - Steps
+# 1. Install FrontEnd ✅
+# 2. Install Backend ✅
+# 3. Build Front End ✅
+# 4. Build Backend ✅
+# 5. Install AWS EB ✅
+# 6. Deploy Both App ✅
+
+
 version: 2.1
 orbs:
   # orgs contain basc recipes and reproducible actions (install node, aws, etc.)
@@ -11,39 +20,35 @@ jobs:
       # the base image can run most needed actions with orbs
       - image: 'cimg/node:14.15'
     steps:
-      # install node and checkout code
+      # install node, aws-cli and checkout code
       - node/install:
           node-version: '14.15'
       - checkout
+      - aws-cli/setup
       # Use root level package.json to install dependencies in the frontend app
       - run:
           name: Install Front-End Dependencies
           command: |
-            echo "NODE --version" 
-            echo $(node --version)
-            echo "NPM --version" 
-            echo $(npm --version)
             npm run frontend:install
       # TODO: Install dependencies in the the backend API
       - run:
           name: Install API Dependencies
           command: |
-            echo "TODO: Install dependencies in the the backend API  "
-      # TODO: Lint the frontend
-      - run:
-          name: Front-End Lint
-          command: |
-            echo "TODO: Lint the frontend"
+            npm run backend:install
       # TODO: Build the frontend app
       - run:
           name: Front-End Build
           command: |
-            echo "TODO: Build the frontend app"
+            npm run frontend:build
       # TODO: Build the backend API
       - run:
           name: API Build
           command: |
-            echo "TODO: Build the backend API"
+            npm run backend:build
+      - run:
+          name: Install AWS EB
+          command: |
+            npm run api:aws-eb
   # deploy step will run only after manual approval
   deploy:
     docker:
@@ -59,7 +64,7 @@ jobs:
           name: Deploy App
           # TODO: Install, build, deploy in both apps
           command: |
-            echo "# TODO: Install, build, deploy in both apps"
+            npm run deploy
 
 workflows:
   udagram:
@@ -69,7 +74,6 @@ workflows:
           filters:
             branches:
               only:
-                - master
                 - main
           type: approval
           requires:
@@ -77,4 +81,5 @@ workflows:
       - deploy:
           requires:
             - hold
-# VS Code Extension Version: 1.5.1
+
+
