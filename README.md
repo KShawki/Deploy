@@ -1,8 +1,8 @@
 <h2>
-  <center> Hosting a Full-Stack Application </center>
+  <center> Hosting a Full-Stack Application</center>
 </h2>
 
-<!-- [![CircleCI](https://dl.circleci.com/status-badge/img/gh/KShawki/Deploy/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/KShawki/Deploy/tree/main) -->
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/KShawki/Deploy/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/KShawki/Deploy/tree/main)
 
 | AWS | http://test.eba-ewzp6atm.us-east-1.elasticbeanstalk.com/ |
 | --- | -------------------------------------------------------- |
