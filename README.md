@@ -2,9 +2,9 @@
   <center> Hosting a Full-Stack Application</center>
 </h2>
 
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/KShawki/Deploy/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/KShawki/Deploy/tree/main)
 
-| AWS | http://test.eba-ewzp6atm.us-east-1.elasticbeanstalk.com/ |
+## FRONT END APPLICATION
+| AWS | http://khalid-udgram.s3-website-us-east-1.amazonaws.com/ |
 | --- | -------------------------------------------------------- |
 
 ## About
@@ -19,9 +19,12 @@ The Project is for the Advanced Full-Stack Web Development Nanodegree Program - 
 - Run the Scripts
 - Enjoy!
 
-## Archticture Diagram
 
-![Diagram](images/main-architectrue.jpg)
+## Documentation
+There are 3 files: 
+1. Application Dependencies
+2. Infrastructure Description
+3. Pipeline Description
 
 ### Dependencies
 
@@ -37,7 +40,7 @@ The Project is for the Advanced Full-Stack Web Development Nanodegree Program - 
 - A S3 bucket for hosting uploaded pictures.
 
 ```
-g
+
 ## Built With
 
 - [Angular](https://angular.io/) - Single Page Application Framework
